@@ -21,6 +21,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
+    width: 100%;
 }
 
 /* Hearts Animation Background */
@@ -67,10 +68,12 @@ body {
     padding: 15px 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     box-shadow: 0 2px 20px rgba(255, 107, 157, 0.1);
     z-index: 1000;
     flex-wrap: wrap;
+    overflow-x: auto;
 }
 
 .tab-btn {
@@ -219,7 +222,7 @@ body {
 /* Reasons Cards */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 30px;
     padding: 20px;
 }
@@ -292,6 +295,7 @@ body {
     color: var(--dark);
     margin-bottom: 10px;
     font-weight: 600;
+    word-wrap: break-word;
 }
 
 .card-icon {
@@ -372,6 +376,7 @@ body {
     font-size: 1.5em;
     margin-bottom: 10px;
     color: var(--dark);
+    word-wrap: break-word;
 }
 
 .timeline-description {
@@ -411,7 +416,7 @@ body {
 /* Gallery */
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -497,6 +502,7 @@ body {
     line-height: 2;
     color: var(--dark);
     margin-bottom: 40px;
+    word-wrap: break-word;
 }
 
 .letter-content p {
@@ -566,7 +572,7 @@ body {
 
 .coupons-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
     gap: 30px;
     padding: 20px;
 }
@@ -612,6 +618,7 @@ body {
     font-size: 1.8em;
     font-weight: bold;
     margin-bottom: 5px;
+    word-wrap: break-word;
 }
 
 .coupon-emoji {
@@ -767,12 +774,71 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .nav-tabs {
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .tab-btn {
+        font-size: 11px;
+        padding: 8px 12px;
+        white-space: nowrap;
+    }
+
+    .tab-content {
+        padding: 80px 15px 30px;
+    }
+
     .main-title {
         font-size: 2.5em;
     }
 
     .section-title {
         font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .counter-box {
+        padding: 25px 35px;
+    }
+
+    .counter-number {
+        font-size: 3em;
+    }
+
+    .counter-label {
+        font-size: 1em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+        padding: 0 10px;
+    }
+
+    .home-image img {
+        max-width: 100%;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .reason-card {
+        padding: 25px;
+    }
+
+    .card-number {
+        font-size: 2.5em;
+    }
+
+    .card-title {
+        font-size: 1.3em;
+    }
+
+    .card-description {
+        font-size: 1em;
     }
 
     .timeline::before {
@@ -787,7 +853,7 @@ body {
     .timeline-content,
     .timeline-item:nth-child(odd) .timeline-content,
     .timeline-item:nth-child(even) .timeline-content {
-        width: 100%;
+        width: calc(100% - 60px);
         margin-left: 60px;
         margin-right: 0;
     }
@@ -796,29 +862,216 @@ body {
         left: 30px;
     }
 
+    .timeline-date {
+        font-size: 1.5em;
+    }
+
+    .timeline-title {
+        font-size: 1.2em;
+    }
+
+    .timeline-description {
+        font-size: 1em;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 10px;
+    }
+
     .letter-paper {
-        padding: 30px;
+        padding: 30px 20px;
     }
 
-    .counter-number {
-        font-size: 3em;
+    .letter-title {
+        font-size: 2em;
+        margin-bottom: 30px;
     }
 
-    .tab-btn {
-        font-size: 12px;
-        padding: 8px 15px;
+    .letter-content {
+        font-size: 1.1em;
+        line-height: 1.8;
+    }
+
+    .signature {
+        font-size: 1.5em;
     }
 
     .coupons-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
     }
 
     .coupon-title {
         font-size: 1.5em;
     }
 
+    .coupon-emoji {
+        font-size: 2.5em;
+    }
+
+    .coupon-description {
+        font-size: 1em;
+    }
+
+    .coupon-body {
+        padding: 25px 15px 15px;
+    }
+
     .download-pdf-btn {
         font-size: 1em;
         padding: 12px 30px;
+    }
+
+    .coupons-subtitle {
+        font-size: 1.1em;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-tabs {
+        padding: 8px;
+        gap: 4px;
+    }
+
+    .tab-btn {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    .tab-content {
+        padding: 70px 10px 20px;
+    }
+
+    .main-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 1.6em;
+        margin-bottom: 25px;
+    }
+
+    .counter-box {
+        padding: 20px 30px;
+    }
+
+    .counter-number {
+        font-size: 2.5em;
+    }
+
+    .counter-label {
+        font-size: 0.9em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .reason-card {
+        padding: 20px;
+    }
+
+    .card-number {
+        font-size: 2em;
+    }
+
+    .card-title {
+        font-size: 1.2em;
+    }
+
+    .card-icon {
+        font-size: 2.5em;
+        margin: 15px 0;
+    }
+
+    .timeline-content,
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        width: calc(100% - 50px);
+        margin-left: 50px;
+        padding: 20px;
+    }
+
+    .timeline-date {
+        font-size: 1.3em;
+    }
+
+    .timeline-title {
+        font-size: 1.1em;
+    }
+
+    .timeline-description {
+        font-size: 0.95em;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .letter-paper {
+        padding: 25px 15px;
+    }
+
+    .letter-title {
+        font-size: 1.7em;
+        margin-bottom: 25px;
+    }
+
+    .letter-content {
+        font-size: 1em;
+        line-height: 1.7;
+    }
+
+    .letter-signature {
+        font-size: 1em;
+    }
+
+    .signature {
+        font-size: 1.3em;
+    }
+
+    .coupon-title {
+        font-size: 1.3em;
+    }
+
+    .coupon-emoji {
+        font-size: 2em;
+    }
+
+    .coupon-body {
+        padding: 20px 12px 12px;
+    }
+
+    .coupon-description {
+        font-size: 0.95em;
+    }
+
+    .coupon-detail-label {
+        font-size: 0.8em;
+    }
+
+    .coupon-detail-value {
+        font-size: 1em;
+    }
+
+    .coupon-code {
+        font-size: 1em;
+    }
+
+    .download-pdf-btn {
+        font-size: 0.95em;
+        padding: 10px 25px;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
     }
 }
