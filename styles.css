@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 :root {
     --primary: #ff6b9d;
     --secondary: #ffc2d1;
@@ -22,6 +27,7 @@ body {
     overflow-x: hidden;
     position: relative;
     width: 100%;
+    max-width: 100vw;
 }
 
 /* Hearts Animation Background */
@@ -104,6 +110,7 @@ body {
     display: none;
     padding: 100px 20px 40px;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -129,6 +136,8 @@ body {
 .home-container {
     text-align: center;
     animation: slideIn 1s ease;
+    width: 100%;
+    max-width: 100%;
 }
 
 @keyframes slideIn {
@@ -155,7 +164,9 @@ body {
 .counter-container {
     display: flex;
     justify-content: center;
-    margin: 40px 0;
+    margin: 40px auto;
+    width: 100%;
+    max-width: 100%;
 }
 
 .counter-box {
@@ -166,6 +177,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 90%;
 }
 
 .counter-number {
@@ -193,14 +205,18 @@ body {
     margin-top: 50px;
     display: flex;
     justify-content: center;
+    width: 100%;
+    padding: 0;
 }
 
 .home-image img {
     max-width: 500px;
     width: 100%;
+    height: auto;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(255, 107, 157, 0.3);
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .home-image img:hover {
@@ -313,10 +329,12 @@ body {
 
 .card-image {
     width: 100%;
+    max-width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
     margin-top: 15px;
+    display: block;
 }
 
 /* Timeline */
@@ -388,12 +406,14 @@ body {
 
 .timeline-image {
     width: 100%;
+    max-width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
     margin-top: 15px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .timeline-image:hover {
@@ -432,9 +452,11 @@ body {
 
 .photo-item img {
     width: 100%;
+    max-width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .photo-item:hover img {
@@ -786,7 +808,7 @@ body {
     }
 
     .tab-content {
-        padding: 80px 15px 30px;
+        padding: 100px 15px 30px;
     }
 
     .main-title {
@@ -815,8 +837,14 @@ body {
         padding: 0 10px;
     }
 
+    .home-image {
+        margin-top: 30px;
+        padding: 0;
+    }
+
     .home-image img {
         max-width: 100%;
+        width: 100%;
     }
 
     .cards-grid {
@@ -943,12 +971,13 @@ body {
     }
 
     .tab-content {
-        padding: 70px 10px 20px;
+        padding: 90px 10px 20px;
     }
 
     .main-title {
         font-size: 2em;
         margin-bottom: 20px;
+        padding: 0 5px;
     }
 
     .section-title {
