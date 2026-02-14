@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amor 💝</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav-tabs">
+        <button class="tab-btn active" data-tab="home">Inicio</button>
+        <button class="tab-btn" data-tab="reasons">Razones</button>
+        <button class="tab-btn" data-tab="timeline">Nuestra Historia</button>
+        <button class="tab-btn" data-tab="gallery">Galería</button>
+        <button class="tab-btn" data-tab="coupons">Cupones</button>
+        <button class="tab-btn" data-tab="letter">Carta</button>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="tab-content active" id="home">
+        <div class="home-container">
+            <h1 class="main-title">Para Mi Amor</h1>
+            <div class="counter-container">
+                <div class="counter-box">
+                    <span class="counter-number" id="daysCounter">0</span>
+                    <span class="counter-label">días juntos</span>
+                </div>
+            </div>
+            <p class="subtitle">Explora cada sección para descubrir todo lo que significa para mí ❤️</p>
+            <div class="home-image">
+                <img src="photos/main.jpeg" alt="Nosotros" id="mainPhoto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons Section -->
+    <section class="tab-content" id="reasons">
+        <div class="reasons-container">
+            <h2 class="section-title">Razones por las que te amo</h2>
+            <div class="cards-grid" id="cardsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="tab-content" id="timeline">
+        <div class="timeline-container">
+            <h2 class="section-title">Nuestra Historia</h2>
+            <div class="timeline" id="timelineContent"></div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="tab-content" id="gallery">
+        <div class="gallery-container">
+            <h2 class="section-title">Nuestros Momentos</h2>
+            <div class="photo-grid" id="photoGrid"></div>
+        </div>
+    </section>
+
+    <!-- Coupons Section -->
+    <section class="tab-content" id="coupons">
+        <div class="coupons-container">
+            <h2 class="section-title">Cupones de Amor</h2>
+            <p class="coupons-subtitle">¡Cada cupón es canjeable por momentos especiales juntos! 💝</p>
+            <button class="download-pdf-btn" id="downloadPdfBtn">📥 Descargar Cupones en PDF</button>
+            <div class="coupons-grid" id="couponsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Letter Section -->
+    <section class="tab-content" id="letter">
+        <div class="letter-container">
+            <div class="letter-paper">
+                <h2 class="letter-title">Mi Carta Para Ti</h2>
+                <div class="letter-content" id="letterText"></div>
+                <div class="letter-signature">
+                    <p>Con todo mi amor y comprensión,</p>
+                    <p class="signature">Joseph</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for enlarged images -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
